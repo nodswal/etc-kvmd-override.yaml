@@ -1,6 +1,6 @@
 kvmd:
     atx:
-        type:disabled
+        type: disabled
     gpio:
         drivers:
             relay:

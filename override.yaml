@@ -1,0 +1,22 @@
+kvmd:
+    gpio:
+        drivers:
+            relay:
+                type: gpio  # Refers to the plugin name handling the communication
+        scheme:
+            # One outputs of RPi's GPIO
+            relay1:
+                pin: 16 # GPIO pin number on the RPi
+                mode: output
+                switch: true  # enable switching?, I don't want it to "only pulse"
+        view:
+            header:
+                title: Switches  # the menu title
+            table:  # The menu items are rendered in the form of a table of text labels and controls
+                - ["#Relays"]
+                - []  # creates a horizontal separator and starts a new table
+                - ["#Relay #1:", "relay1|confirm|Flip switch"]  # Text label and button with alternative text
+    wol:
+        mac: ff:ff:ff:ff:ff:ff
+        ip: 192.168.0.100
+        # port: 9  # By default
